@@ -1,8 +1,28 @@
 #!/bin/bash
+
+# Wait for 1 second to ensure previous processes settle
 sleep 1
-killall xdg-desktop-portal-hyprland
-killall xdg-desktop-portal-wlr
-killall xdg-desktop-portal
-/usr/libexec/xdg-desktop-portal-hyprland &
+
+# Kill existing desktop portal processes
+killall xdg-desktop-portal-hyprland xdg-desktop-portal-wlr xdg-desktop-portal || true
+
+# Start the Hyprland-specific portal
+if [[ -f /usr/lib/xdg-desktop-portal-hyprland ]]; then
+    /usr/lib/xdg-desktop-portal-hyprland &
+elif [[ -f /usr/libexec/xdg-desktop-portal-hyprland ]]; then
+    /usr/libexec/xdg-desktop-portal-hyprland &
+else
+    echo "Error: xdg-desktop-portal-hyprland not found!"
+    exit 1
+fi
+
+# Allow some time for the Hyprland portal to initialize
 sleep 2
-/usr/lib/xdg-desktop-portal &
+
+# Start the main xdg-desktop-portal
+if [[ -f /usr/lib/xdg-desktop-portal ]]; then
+    /usr/lib/xdg-desktop-portal &
+else
+    echo "Error: xdg-desktop-portal not found!"
+    exit 1
+fi
