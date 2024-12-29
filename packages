@@ -1,0 +1,27 @@
+# Arch packages still WIP, currently just a text file, need to work out which fonts are needed first
+hyprcursor-git
+hyprgraphics-git
+hypridle-git
+hyprland-git
+hyprland-meta-git
+hyprland-protocols-git
+hyprland-qtutils-git
+hyprlang-git
+hyprlock-git
+hyprpaper-git
+hyprpicker-git
+hyprpolkitagent-git
+hyprsysteminfo-git
+hyprutils-git
+hyprwayland-scanner-git
+xdg-desktop-portal-hyprland-git
+wl-clipboard-history-git
+grim
+slurp
+pipewire
+wireplumber
+qt5-wayland
+qt6-wayland
+waybar
+blueman
+wofi
