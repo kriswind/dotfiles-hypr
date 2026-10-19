@@ -19,13 +19,8 @@
         "pulseaudio",
         "network",
         "battery",
-        "hyprland/language",
         "clock"
     ],
-    "hyprland/language": {
-        "format": "{}",
-        "format-en": "ENG",
-    },
     "hyprland/workspaces": {
         "icon-size": 32,
         "spacing": 16,
