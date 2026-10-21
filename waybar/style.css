@@ -64,13 +64,19 @@ tooltip label{
 	margin-left: 1.5px;
 }
 #workspaces button {
-  padding: 3px;
+  padding: 0 3px;
   color: @content_inactive;
 	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #workspaces button.active {
 	color: @content_main;
-	border-top: 3px solid white;
+}
+#workspaces .workspace-label {
+  padding: 0 6px;
+  border-top: 3px solid transparent;
+}
+#workspaces button.active .workspace-label {
+  border-top-color: white;
 }
 #workspaces button.focused {
   color: @bg_active;
@@ -85,26 +91,23 @@ tooltip label{
 	color: @content_main;
 }
 
-#taskbar {
-}
-
-#taskbar button {
-	min-width: 130px;
+#workspaces .taskbar-window {
+	min-width: 0;
 	border-top: 3px solid rgba(255, 255, 255, 0.3);
-	margin-left: 2px;
-	margin-right: 2px;
-  padding-left: 8px;
-  padding-right: 8px;
+	margin-left: 1px;
+	margin-right: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
   color: white;
 	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#taskbar button.active {
+#workspaces .taskbar-window.active {
 	border-top: 3px solid white;
   background: @bg_active;
 }
 
-#taskbar button:hover {
+#workspaces .taskbar-window:hover {
 	border-top: 3px solid white;
   background: @bg_hover;
 	color: @content_main;
