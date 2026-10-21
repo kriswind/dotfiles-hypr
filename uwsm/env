@@ -1,3 +1,3 @@
 export XCURSOR_SIZE=24
 export QT_QPA_PLATFORM=wayland
-export QT_QPA_PLATFORMTHEME=kde
+export QT_QPA_PLATFORMTHEME=hyprqt6engine
