@@ -59,12 +59,14 @@ tooltip label{
 }
 
 #workspaces {
-  color: transparent;
+  color: @content_main;
 	margin-right: 1.5px;
 	margin-left: 1.5px;
 }
 #workspaces button {
-  padding: 3px;
+  padding: 0;
+  margin-right: 5px;
+  border-top: 3px solid transparent;
   color: @content_inactive;
 	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -85,29 +87,37 @@ tooltip label{
 	color: @content_main;
 }
 
-#taskbar {
-}
-
-#taskbar button {
-	min-width: 130px;
-	border-top: 3px solid rgba(255, 255, 255, 0.3);
-	margin-left: 2px;
-	margin-right: 2px;
+#workspaces .taskbar-window {
+  min-width: 28px;
+  margin-left: 2px;
+  margin-right: 0;
   padding-left: 8px;
   padding-right: 8px;
   color: white;
-	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#taskbar button.active {
-	border-top: 3px solid white;
+/* Hidden desktops show icons; all windows on visible desktops show titles. */
+#workspaces .taskbar-window label {
+  font-size: 0px;
+}
+
+#workspaces .taskbar-window.active {
   background: @bg_active;
 }
 
-#taskbar button:hover {
-	border-top: 3px solid white;
+#workspaces button.active .taskbar-window label,
+#workspaces button.visible .taskbar-window label {
+  font-size: 12.7px;
+}
+
+#workspaces .workspace-label {
+  padding: 0 5px;
+}
+
+#workspaces .taskbar-window:hover {
   background: @bg_hover;
-	color: @content_main;
+  color: @content_main;
 }
 
 #cpu, #disk, #memory {

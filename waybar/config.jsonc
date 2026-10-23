@@ -6,8 +6,7 @@
     "height": 42,
     "modules-left": [
         "custom/os_button",
-        "hyprland/workspaces",
-        "wlr/taskbar"
+        "hyprland/workspaces"
     ],
     "modules-center": [],
     "modules-right": [
@@ -22,10 +21,18 @@
         "clock"
     ],
     "hyprland/workspaces": {
-        "icon-size": 32,
-        "spacing": 16,
+        "format": "{id} {windows}",
+        "sort-by": "number",
+        "all-outputs": false,
         "on-scroll-up": "hyprctl dispatch workspace r+1",
-        "on-scroll-down": "hyprctl dispatch workspace r-1"
+        "on-scroll-down": "hyprctl dispatch workspace r-1",
+        "workspace-taskbar": {
+            "enable": true,
+            "format": "{icon} {title:.17}",
+            "icon-size": 28,
+            "update-active-window": true,
+            "on-click-window": "hyprctl dispatch focuswindow address:{address}"
+        }
     },
     "custom/os_button": {
         "format": "󰣇",
@@ -59,15 +66,6 @@
         "max-length": 10,
         "tooltip": true,
         "tooltip-format": "RAM - {used:0.1f}GiB used"
-    },
-    "wlr/taskbar": {
-        "format": "{icon} {title:.17}",
-        "icon-size": 28,
-        "spacing": 3,
-        "on-click-middle": "activate",
-        "tooltip-format": "{title}",
-        "ignore-list": [],
-        "on-click": "activate"
     },
     "tray": {
         "icon-size": 18,
